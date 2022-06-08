@@ -4,6 +4,7 @@ import FilterButton from './components/FilterButton';
 import Form from './components/Form';
 import { useState, useRef, useEffect } from 'react';
 import { nanoid } from 'nanoid';
+import usePrevious from './components/UsePrevious';
 
 const FILTER_MAP ={
   All: () => true,
@@ -12,18 +13,6 @@ const FILTER_MAP ={
 };
 
 const FILTER_NAMES= Object.keys(FILTER_MAP);
-
-
-//TODO
-//Note: Since we're now utilizing usePrevious() in two files, a good efficiency refactor would be to move the usePrevious() function into its own file, export it from that file, and import it where you need it. Try doing this as an exercise once you've got to the end.
-function usePrevious(value){
-const ref =  useRef();
-useEffect(() => {
-  ref.current = value;
-});
-return ref.current;
-};
-
 
 
 function App(props) {

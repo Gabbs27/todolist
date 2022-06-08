@@ -1,15 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-
-
-// Robust accesibility for focusing buttons and textboxes
-function usePrevious(value){
- const ref = useRef();
-  useEffect(() => {
-    ref.current = value;
-  });
-  return ref.current;
-}
+import usePrevious from "./UsePrevious";
 
 export default function Todo(props){
 
